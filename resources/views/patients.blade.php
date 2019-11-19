@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-	<table class="table table-bordered">
+	<table id="patienttable" class="table table-sm table-bordered table-striped dataTable no-footer">
 		<thead>
 		<tr>
 			<th>SVNr</th>
@@ -29,5 +29,26 @@
 		@endforeach
 		</tbody>
 	</table>
-	<p>{{ $patients->links() }}</p>
+	
+	<script>
+	$(document).ready(function () {
+		$('#patienttable').DataTable({
+			"lengthChange": false,
+			"order": [1, "asc"],
+			"language": {
+				"lengthMenu": "_MENU_ Einträge pro Seite",
+				"zeroRecords": "Keine Einträge gefunden",
+				"info": "Seite _PAGE_ von _PAGES_",
+				"infoEmpty": "Keine Einträge verfügbar",
+				"infoFiltered": "(_TOTAL_ von _MAX_ Einträgen)",
+				"search": "Suche",
+				"paginate": {
+					"previous": "Vorherige",
+					"next": "Nächste"
+				}
+			}
+		});
+		$('.dataTables_length').addClass('bs-select');
+	});
+	</script>
 @endsection

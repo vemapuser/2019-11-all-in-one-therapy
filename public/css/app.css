@@ -53,3 +53,7 @@ body {
   margin-bottom: 30px;
 }
 
+.dataTables_info {
+  float: left;
+}
+
