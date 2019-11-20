@@ -57,3 +57,29 @@ body {
   float: left;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.carousel-control-prev-icon {
+  margin-left: -50%;
+}
+
+.carousel-control-next-icon {
+  margin-right: -50%;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 7.5% !important;
+  right: 7.5% !important;
+}
+
+.smalltext {
+  font-size: 90%;
+  text-align: left;
+  margin-left: 0.8em;
+}
+
