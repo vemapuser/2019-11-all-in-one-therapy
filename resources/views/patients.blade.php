@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-	<table id="patienttable" class="table table-sm table-bordered table-striped dataTable no-footer">
+	<table id="patienttable" class="table table-sm table-bordered table-hover dataTable no-footer">
 		<thead>
 		<tr>
 			<th>SVNr</th>
@@ -18,14 +18,14 @@
 		</thead>
 		<tbody>
 		@foreach($patients as $patient)
-		<tr>
+		<tr class="clickable" onclick="document.location='/patient/{{ $patient->id }}'">
 			<td>{{ $patient->svnr }}</td>
 			<td class="text-left">{{ $patient->lastname }}, {{ $patient->firstname }}</td>
 			<td>{{ $patient->address }}</td>
 			<td>{{ $patient->plz }}</td>
 			<td>{{ $patient->city }}</td>
 			<td>{{ $patient->country }}</td>
-		</tr>	
+		</tr>
 		@endforeach
 		</tbody>
 	</table>

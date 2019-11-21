@@ -83,3 +83,7 @@ body {
   margin-left: 0.8em;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
