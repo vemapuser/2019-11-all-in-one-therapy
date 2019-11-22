@@ -5,6 +5,7 @@
 @endsection
 
 @section('main')
+	<a href="/patient/new"><button class="btn btn-primary">Neuer Patient anlegen</button></a>
 	<table id="patienttable" class="table table-sm table-bordered table-hover dataTable no-footer">
 		<thead>
 		<tr>
