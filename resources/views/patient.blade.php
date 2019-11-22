@@ -10,7 +10,7 @@
 @endsection
 
 @section('main')
-	<div style="text-align:left">
+	<div style="text-align:left; margin-left:10px">
 		<form method="post">
 			@csrf
 			<div class="form-group row">
@@ -49,4 +49,22 @@
 			<button type="button" class="btn btn-primary" onclick="window.history.back()">Zurück</button>
 		</form>
 	</div>
+
+	@isset($patient)
+	<hr>
+	<h1>Dokumentation</h1>
+
+	@php
+		$documentations = App\Documentation::where('patient_id', $patient->id)->where('user_id', Auth::user()->id)->get();
+	@endphp
+
+	@foreach ($documentations as $documentation)
+		<div class="documentation-item">
+			<em>{{ $documentation->created_at }}</em><br>
+			{{ $documentation->text }}
+		</div>
+	@endforeach
+
+	@endisset
+
 @endsection
