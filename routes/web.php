@@ -38,4 +38,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/patient/{id}', 'PatientController@edit');
     
     Route::post('/patient/{id}', 'PatientController@update');
+
+    Route::post('/documentation/new/{id}', 'DocumentationController@store');
 });

@@ -65,6 +65,15 @@
 		</div>
 	@endforeach
 
+	<hr>
+	<h1>Neue Dokumentation anlegen</h1>
+	<div style="margin:5px 10px; text-align: left">
+		<form action="/documentation/new/{{ $patient->id }}" method="post">
+			@csrf
+			<textarea name="text" class="form-control" style="margin-bottom: 10px" rows="5"></textarea>
+			<button type="submit" class="btn btn-primary">Absenden</button>
+		</form>
+	</div>
 	@endisset
 
 @endsection
