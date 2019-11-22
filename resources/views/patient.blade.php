@@ -11,7 +11,7 @@
 
 @section('main')
 	<div style="text-align:left; margin-left:10px">
-		<form method="post">
+		<form method="post" class="container-fluid">
 			@csrf
 			<div class="form-group row">
 				<div class="col-1"><label for="svnr">SVNr.</label></div>
