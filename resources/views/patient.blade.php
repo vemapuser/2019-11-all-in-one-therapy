@@ -45,8 +45,19 @@
 				<div class="col-1"><label for="country">Land</label></div>
 				<div class="col-5"><input type="text" class="form-control" name="country" id="country" value="{{ isset($patient) ? $patient->country : ''}}"></div>
 			</div>
-			<button type="submit" class="btn btn-primary">Absenden</button>
-			<button type="button" class="btn btn-primary" onclick="window.history.back()">Zurück</button>
+			<div class="form-group row">
+				<div class="col-2">
+					<button type="submit" class="btn btn-primary">Absenden</button>
+					<button type="button" class="btn btn-primary" onclick="window.history.back()">Zurück</button>
+				</div>
+				@isset($patient)
+				<div class="col-4" style="text-align: right">
+					<button type="button" class="btn btn-danger" onclick="if(confirm('Sind Sie sicher das Sie den Patienten ' +
+					'{{ $patient->lastname }}, {{ $patient->firstname }} löschen wollen?')) window.location='/patient/delete/{{ $patient->id }}'">Patient löschen
+					</button>
+				</div>
+				@endisset
+			</div>
 		</form>
 	</div>
 

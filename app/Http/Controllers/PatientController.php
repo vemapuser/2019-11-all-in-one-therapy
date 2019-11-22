@@ -50,4 +50,10 @@ class PatientController extends Controller
         $patient->save();
         return redirect("/patients");
     }
+
+    public function delete($id) {
+        $patient = Patient::findOrFail($id);
+        $patient->delete();
+        return redirect("/patients");
+    }
 }
