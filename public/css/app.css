@@ -8,9 +8,11 @@ body {
   margin: 0;
 }
 
+/*
 .full-height {
-  height: 100vh;
+	height: 100vh;
 }
+*/
 
 .flex-center {
   -webkit-box-align: center;
@@ -37,6 +39,7 @@ body {
 
 .title {
   font-size: 84px;
+  margin-top: 20px;
 }
 
 .links > a {

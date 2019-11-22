@@ -60,7 +60,7 @@
 
 	@foreach ($documentations as $documentation)
 		<div class="documentation-item">
-			<em>{{ $documentation->created_at }}</em><br>
+			<em>@php echo date("d.m.Y H:i:s", strtotime($documentation->created_at)) @endphp</em><br>
 			{{ $documentation->text }}
 		</div>
 	@endforeach
