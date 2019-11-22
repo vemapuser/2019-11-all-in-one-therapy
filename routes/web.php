@@ -40,4 +40,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/patient/{id}', 'PatientController@update');
 
     Route::post('/documentation/new/{id}', 'DocumentationController@store');
+
+    Route::get('/documentations', function () {
+        return view('documentations');
+    });
 });
