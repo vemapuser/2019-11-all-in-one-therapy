@@ -14,7 +14,7 @@
 	<div class="documentation-item">
 	<em>@php echo date("d.m.Y H:i:s", strtotime($documentation->created_at)) . ", ";
 		$patient = App\Patient::where('id', $documentation->patient_id)->first();
-		echo $patient->lastname . ", " . $patient->firstname;
+		echo "<a href='/patient/$patient->id'>$patient->lastname, $patient->firstname</a>";
 		@endphp</em><br>
 		{{ $documentation->text }}
 	</div>
